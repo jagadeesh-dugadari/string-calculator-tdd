@@ -1,6 +1,7 @@
 package co.incubyte.stringcalculator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
 
@@ -63,6 +64,16 @@ public class StringCalculatorTest {
 	@Test
 	public void shouldReturnSumForAnyCustomDelimiterMultiNumberString() {
 		assertEquals(3, StringCalculator.add("//~\n1~2"));
+	}
+	
+	@Test
+	public void shouldThrowExceptionForNegativeNumberString() {
+		try{
+			StringCalculator.add("-2");
+			fail("Exception expected for negative number");
+		} catch (Exception e) {
+			// Test pass. Nothing to do
+		}
 	}
 
 }
