@@ -10,5 +10,10 @@ public class StringCalculatorTest {
 	public void shouldReturnZeroForEmptyString() {
 		assertEquals(0, StringCalculator.add(""));
 	}
+	
+	@Test
+	public void shouldReturnZeroForSpaceString() {
+		assertEquals(0, StringCalculator.add(" "));
+	}
 
 }
