@@ -7,6 +7,11 @@ import org.junit.jupiter.api.Test;
 public class StringCalculatorTest {
 	
 	@Test
+	public void shouldReturnNegativeNumberForNull() {
+		assertEquals(-1, StringCalculator.add(null));
+	}
+	
+	@Test
 	public void shouldReturnZeroForEmptyString() {
 		assertEquals(0, StringCalculator.add(""));
 	}
