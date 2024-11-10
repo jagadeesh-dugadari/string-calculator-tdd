@@ -8,10 +8,12 @@ public class StringCalculator {
 		
 		int result = -1;
 		
-		if (numbers.trim().equals(EMPTY_STRING)) {
-			result = 0;
-		} else {
-			result = Integer.valueOf(numbers.trim());
+		if (numbers != null) {
+			if (numbers.trim().equals(EMPTY_STRING)) {
+				result = 0;
+			} else {
+				result = Integer.valueOf(numbers.trim());
+			}
 		}
 		
 		return result;
