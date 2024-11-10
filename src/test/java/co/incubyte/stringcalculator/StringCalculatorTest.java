@@ -40,7 +40,7 @@ public class StringCalculatorTest {
 	
 	@Test
 	public void shouldReturnSumForMultiNumberString() {
-		assertEquals(5, StringCalculator.add("4,7"));
+		assertEquals(11, StringCalculator.add("4,7"));
 	}
 
 }

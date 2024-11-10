@@ -15,6 +15,12 @@ public class StringCalculator {
 				result = 0;
 			} else if (trimmedInput.matches(NUMBER_STRING)) {
 				result = Integer.valueOf(trimmedInput);
+			} else if (trimmedInput.contains(",")) {
+				String[] numsArray = trimmedInput.split(",");
+				result = 0;
+				for (String num : numsArray) {
+					result += Integer.valueOf(num);
+				}
 			}
 		}
 		
