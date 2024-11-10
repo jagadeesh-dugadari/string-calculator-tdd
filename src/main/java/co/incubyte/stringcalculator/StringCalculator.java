@@ -10,6 +10,8 @@ public class StringCalculator {
 		
 		if (numbers.trim().equals(EMPTY_STRING)) {
 			result = 0;
+		} else {
+			result = Integer.valueOf(numbers);
 		}
 		
 		return result;
