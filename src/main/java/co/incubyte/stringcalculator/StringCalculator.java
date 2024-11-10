@@ -16,6 +16,7 @@ public class StringCalculator {
 	private static final String COMMA_OR_NEW_LINE_STRING = ",|\n";
 	private static final String DOUBLE_SLASH_STRING = "//";
 	private static final String CUSTOM_DELIMITER_PATTERN = "//(.)\n(.*)";
+	private static final String CUTOMER_ERR_MSG = "negative numbers not allowed ";
 	
 	
 	public static int add(String numbers) {
@@ -28,6 +29,8 @@ public class StringCalculator {
 				result = 0;
 			} else if (trimmedInput.matches(NUMBER_STRING)) {
 				result = Integer.valueOf(trimmedInput);
+			}  else if (trimmedInput.matches(NEGATIVE_NUMBER_STRING)) {
+				throw new RuntimeException(CUTOMER_ERR_MSG + trimmedInput);
 			} else if (trimmedInput.startsWith(DOUBLE_SLASH_STRING)) {
 				Matcher customDelimiterMatcher = Pattern.compile(CUSTOM_DELIMITER_PATTERN).matcher(numbers);
 				if (customDelimiterMatcher.matches()) {
@@ -37,8 +40,6 @@ public class StringCalculator {
 				}
 			} else if (trimmedInput.contains(COMMA_STRING) || trimmedInput.contains(NEW_LINE_STRING)) {
 				result = getSumForStringArray(trimmedInput.split(COMMA_OR_NEW_LINE_STRING));
-			} else if (trimmedInput.matches(NEGATIVE_NUMBER_STRING)) {
-				throw new RuntimeException("negative numbers not allowed "+trimmedInput);
 			}
 		}
 		
@@ -53,7 +54,7 @@ public class StringCalculator {
 			}
 		}
 		if (ls.size() > 0) {
-			throw new RuntimeException("negative numbers not allowed "+String.join(COMMA_STRING, ls));
+			throw new RuntimeException(CUTOMER_ERR_MSG + String.join(COMMA_STRING, ls));
 		}
 		
 		return Arrays.stream(arr).mapToInt(num -> Integer.valueOf(num.trim())).sum();
