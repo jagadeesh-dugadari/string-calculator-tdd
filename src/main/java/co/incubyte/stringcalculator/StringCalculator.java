@@ -2,12 +2,16 @@ package co.incubyte.stringcalculator;
 
 public class StringCalculator {
 	
+	private static final String EMPTY_STRING = "";
+	
 	public static int add(String numbers) {
 		
-		if (numbers.equals("")) {
-			return 0;
+		int result = -1;
+		
+		if (numbers.equals(EMPTY_STRING)) {
+			result = 0;
 		}
 		
-		return -1;
+		return result;
 	}
 }
