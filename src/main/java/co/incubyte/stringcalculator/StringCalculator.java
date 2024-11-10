@@ -8,6 +8,7 @@ public class StringCalculator {
 	
 	private static final String EMPTY_STRING = "";
 	private static final String NUMBER_STRING = "\\d+";
+	private static final String NEGATIVE_NUMBER_STRING = "-\\d+";
 	private static final String COMMA_STRING = ",";
 	private static final String NEW_LINE_STRING = "\n";
 	private static final String COMMA_OR_NEW_LINE_STRING = ",|\n";
@@ -34,6 +35,8 @@ public class StringCalculator {
 				}
 			} else if (trimmedInput.contains(COMMA_STRING) || trimmedInput.contains(NEW_LINE_STRING)) {
 				result = getSumForStringArray(trimmedInput.split(COMMA_OR_NEW_LINE_STRING));
+			} else if (trimmedInput.matches(NEGATIVE_NUMBER_STRING)) {
+				throw new RuntimeException("");
 			}
 		}
 		
