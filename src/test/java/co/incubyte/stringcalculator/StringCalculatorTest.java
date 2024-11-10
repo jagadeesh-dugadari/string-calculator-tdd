@@ -15,5 +15,10 @@ public class StringCalculatorTest {
 	public void shouldReturnZeroForSpaceString() {
 		assertEquals(0, StringCalculator.add(" "));
 	}
+	
+	@Test
+	public void shouldReturnSameNumberForSingleNumberString() {
+		assertEquals(5, StringCalculator.add("5"));
+	}
 
 }
