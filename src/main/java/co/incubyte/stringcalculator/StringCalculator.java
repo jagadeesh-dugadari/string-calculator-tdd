@@ -18,8 +18,8 @@ public class StringCalculator {
 				result = 0;
 			} else if (trimmedInput.matches(NUMBER_STRING)) {
 				result = Integer.valueOf(trimmedInput);
-			} else if (trimmedInput.contains(COMMA_STRING)) {
-				result = Arrays.stream(trimmedInput.split(COMMA_STRING)).mapToInt(num -> Integer.valueOf(num.trim())).sum();
+			} else if (trimmedInput.contains(COMMA_STRING) || trimmedInput.contains("\n")) {
+				result = Arrays.stream(trimmedInput.split(",|\n")).mapToInt(num -> Integer.valueOf(num.trim())).sum();
 			}
 		}
 		
