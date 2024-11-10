@@ -20,5 +20,12 @@ public class StringCalculatorTest {
 	public void shouldReturnSameNumberForSingleNumberString() {
 		assertEquals(5, StringCalculator.add("5"));
 	}
+	
+	@Test
+	public void shouldReturnSameNumberForSingleNumberSpaceString() {
+		assertEquals(5, StringCalculator.add("5 "));
+		assertEquals(5, StringCalculator.add(" 5"));
+		assertEquals(5, StringCalculator.add(" 5 "));
+	}
 
 }
