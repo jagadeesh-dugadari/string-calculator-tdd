@@ -71,8 +71,18 @@ public class StringCalculatorTest {
 		try{
 			StringCalculator.add("-2");
 			fail("Exception expected for negative number");
-		} catch (Exception e) {
+		} catch (RuntimeException e) {
 			// Test pass. Nothing to do
+		}
+	}
+	
+	@Test
+	public void shouldHaveErroMsgAsExpectedForNegativeNumberString() {
+		try{
+			StringCalculator.add("-2");
+			fail("Exception expected for negative number");
+		} catch (RuntimeException e) {
+			assertEquals("negative numbers not allowed -2", e.getMessage());
 		}
 	}
 
