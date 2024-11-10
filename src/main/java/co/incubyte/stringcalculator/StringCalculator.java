@@ -36,7 +36,7 @@ public class StringCalculator {
 			} else if (trimmedInput.contains(COMMA_STRING) || trimmedInput.contains(NEW_LINE_STRING)) {
 				result = getSumForStringArray(trimmedInput.split(COMMA_OR_NEW_LINE_STRING));
 			} else if (trimmedInput.matches(NEGATIVE_NUMBER_STRING)) {
-				throw new RuntimeException("");
+				throw new RuntimeException("negative numbers not allowed "+trimmedInput);
 			}
 		}
 		
