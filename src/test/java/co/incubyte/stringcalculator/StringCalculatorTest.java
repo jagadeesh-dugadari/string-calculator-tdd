@@ -22,6 +22,11 @@ public class StringCalculatorTest {
 	}
 	
 	@Test
+	public void shouldReturnNegativeNumberForNonNumberString() {
+		assertEquals(-1, StringCalculator.add("a"));
+	}
+	
+	@Test
 	public void shouldReturnSameNumberForSingleNumberString() {
 		assertEquals(5, StringCalculator.add("5"));
 	}
