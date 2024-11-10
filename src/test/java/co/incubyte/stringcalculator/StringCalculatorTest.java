@@ -85,5 +85,15 @@ public class StringCalculatorTest {
 			assertEquals("negative numbers not allowed -2", e.getMessage());
 		}
 	}
+	
+	@Test
+	public void shouldThrowExceptionForNegativeInMultiNumberString() {
+		try{
+			StringCalculator.add("-4,1");
+			fail("Exception expected for negative number");
+		} catch (RuntimeException e) {
+			assertEquals("negative numbers not allowed -4", e.getMessage());
+		}
+	}
 
 }
