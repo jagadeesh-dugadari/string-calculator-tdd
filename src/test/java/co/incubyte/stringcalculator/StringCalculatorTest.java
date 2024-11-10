@@ -59,5 +59,10 @@ public class StringCalculatorTest {
 	public void shouldReturnSumForCustomDelimiterMultiNumberString() {
 		assertEquals(3, StringCalculator.add("//;\n1;2"));
 	}
+	
+	@Test
+	public void shouldReturnSumForAnyCustomDelimiterMultiNumberString() {
+		assertEquals(3, StringCalculator.add("//~\n1~2"));
+	}
 
 }
