@@ -8,7 +8,7 @@ public class StringCalculator {
 		
 		int result = -1;
 		
-		if (numbers.equals(EMPTY_STRING)) {
+		if (numbers.trim().equals(EMPTY_STRING)) {
 			result = 0;
 		}
 		
