@@ -39,15 +39,20 @@ public class StringCalculatorTest {
 	}
 	
 	@Test
-	public void shouldReturnSumForMultiNumberString() {
+	public void shouldReturnSumForCommaMultiNumberString() {
 		assertEquals(11, StringCalculator.add("4,7"));
 	}
 	
 	@Test
-	public void shouldReturnSumForMultiNumberWithSpaceString() {
+	public void shouldReturnSumForCommaMultiNumberAndSpaceString() {
 		assertEquals(22, StringCalculator.add("4, 7,10,1"));
 		assertEquals(22, StringCalculator.add("4,7,10 ,1"));
 		assertEquals(22, StringCalculator.add("4,7,10, 1 "));
+	}
+	
+	@Test
+	public void shouldReturnSumForCommaNewLineMultiNumberString() {
+		assertEquals(6, StringCalculator.add("1\n2,3"));
 	}
 
 }
