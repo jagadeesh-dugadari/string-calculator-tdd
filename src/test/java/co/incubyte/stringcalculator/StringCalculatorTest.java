@@ -115,5 +115,15 @@ public class StringCalculatorTest {
 			assertEquals("negative numbers not allowed -2", e.getMessage());
 		}
 	}
+	
+	@Test
+	public void shouldThrowExceptionForMultiNegativeInCustomDelimiterString() {
+		try{
+			StringCalculator.add("//$\n1$-2$-4$-6");
+			fail("Exception expected for negative number");
+		} catch (RuntimeException e) {
+			assertEquals("negative numbers not allowed -2,-4,-6", e.getMessage());
+		}
+	}
 
 }
