@@ -1,8 +1,13 @@
 package co.incubyte.stringcalculator;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.StringJoiner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import javax.management.RuntimeErrorException;
 
 public class StringCalculator {
 	
@@ -44,6 +49,16 @@ public class StringCalculator {
 	}
 	
 	public static int getSumForStringArray(String[] arr) {
+		List<String> ls = new ArrayList<>();
+		for (String num : arr) {
+			if (Integer.valueOf(num.trim()) < 0) {
+				ls.add(num);
+			}
+		}
+		if (ls.size() > 0) {
+			throw new RuntimeException("negative numbers not allowed "+String.join(COMMA_STRING, ls));
+		}
+		
 		return Arrays.stream(arr).mapToInt(num -> Integer.valueOf(num.trim())).sum();
 	}
 }
