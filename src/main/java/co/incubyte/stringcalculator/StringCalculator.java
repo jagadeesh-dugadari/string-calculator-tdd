@@ -1,9 +1,12 @@
 package co.incubyte.stringcalculator;
 
+import java.util.Arrays;
+
 public class StringCalculator {
 	
 	private static final String EMPTY_STRING = "";
 	private static final String NUMBER_STRING = "\\d+";
+	private static final String COMMA_STRING = ",";
 	
 	public static int add(String numbers) {
 		
@@ -15,12 +18,8 @@ public class StringCalculator {
 				result = 0;
 			} else if (trimmedInput.matches(NUMBER_STRING)) {
 				result = Integer.valueOf(trimmedInput);
-			} else if (trimmedInput.contains(",")) {
-				String[] numsArray = trimmedInput.split(",");
-				result = 0;
-				for (String num : numsArray) {
-					result += Integer.valueOf(num);
-				}
+			} else if (trimmedInput.contains(COMMA_STRING)) {
+				result = Arrays.stream(trimmedInput.split(COMMA_STRING)).mapToInt(Integer::valueOf).sum();
 			}
 		}
 		
