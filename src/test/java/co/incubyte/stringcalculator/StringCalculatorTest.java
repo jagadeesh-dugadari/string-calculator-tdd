@@ -37,5 +37,10 @@ public class StringCalculatorTest {
 		assertEquals(5, StringCalculator.add(" 5"));
 		assertEquals(5, StringCalculator.add(" 5 "));
 	}
+	
+	@Test
+	public void shouldReturnSumForMultiNumberString() {
+		assertEquals(5, StringCalculator.add("4,7"));
+	}
 
 }
