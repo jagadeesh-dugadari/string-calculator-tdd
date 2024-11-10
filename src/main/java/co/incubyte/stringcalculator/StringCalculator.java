@@ -12,7 +12,7 @@ public class StringCalculator {
 			String trimmedInput = numbers.trim();
 			if (trimmedInput.equals(EMPTY_STRING)) {
 				result = 0;
-			} else {
+			} else if (trimmedInput.matches("\\d+")) {
 				result = Integer.valueOf(trimmedInput);
 			}
 		}
