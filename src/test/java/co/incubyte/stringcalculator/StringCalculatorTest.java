@@ -42,5 +42,12 @@ public class StringCalculatorTest {
 	public void shouldReturnSumForMultiNumberString() {
 		assertEquals(11, StringCalculator.add("4,7"));
 	}
+	
+	@Test
+	public void shouldReturnSumForMultiNumberWithSpaceString() {
+		assertEquals(22, StringCalculator.add("4, 7,10,1"));
+		assertEquals(22, StringCalculator.add("4,7,10 ,1"));
+		assertEquals(22, StringCalculator.add("4,7,10, 1 "));
+	}
 
 }
