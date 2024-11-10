@@ -19,7 +19,7 @@ public class StringCalculator {
 			} else if (trimmedInput.matches(NUMBER_STRING)) {
 				result = Integer.valueOf(trimmedInput);
 			} else if (trimmedInput.contains(COMMA_STRING)) {
-				result = Arrays.stream(trimmedInput.split(COMMA_STRING)).mapToInt(Integer::valueOf).sum();
+				result = Arrays.stream(trimmedInput.split(COMMA_STRING)).mapToInt(num -> Integer.valueOf(num.trim())).sum();
 			}
 		}
 		
