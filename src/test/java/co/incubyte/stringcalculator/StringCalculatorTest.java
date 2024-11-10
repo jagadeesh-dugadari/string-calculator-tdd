@@ -68,7 +68,7 @@ public class StringCalculatorTest {
 	
 	@Test
 	public void shouldThrowExceptionForNegativeNumberString() {
-		try{
+		try {
 			StringCalculator.add("-2");
 			fail("Exception expected for negative number");
 		} catch (RuntimeException e) {
@@ -78,7 +78,7 @@ public class StringCalculatorTest {
 	
 	@Test
 	public void shouldHaveErroMsgAsExpectedForNegativeNumberString() {
-		try{
+		try {
 			StringCalculator.add("-2");
 			fail("Exception expected for negative number");
 		} catch (RuntimeException e) {
@@ -88,7 +88,7 @@ public class StringCalculatorTest {
 	
 	@Test
 	public void shouldThrowExceptionForNegativeInMultiNumberString() {
-		try{
+		try {
 			StringCalculator.add("-4,1");
 			fail("Exception expected for negative number");
 		} catch (RuntimeException e) {
@@ -98,11 +98,21 @@ public class StringCalculatorTest {
 	
 	@Test
 	public void shouldThrowExceptionForMultiNegativeInMultiNumberString() {
-		try{
+		try {
 			StringCalculator.add("-4,1,-2");
 			fail("Exception expected for negative number");
 		} catch (RuntimeException e) {
 			assertEquals("negative numbers not allowed -4,-2", e.getMessage());
+		}
+	}
+	
+	@Test
+	public void shouldThrowExceptionForNegativeInCustomDelimiterString() {
+		try{
+			StringCalculator.add("//;\n1;-2");
+			fail("Exception expected for negative number");
+		} catch (RuntimeException e) {
+			assertEquals("negative numbers not allowed -2", e.getMessage());
 		}
 	}
 
