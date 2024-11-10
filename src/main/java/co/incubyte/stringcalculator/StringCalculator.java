@@ -3,6 +3,7 @@ package co.incubyte.stringcalculator;
 public class StringCalculator {
 	
 	private static final String EMPTY_STRING = "";
+	private static final String NUMBER_STRING = "\\d+";
 	
 	public static int add(String numbers) {
 		
@@ -12,7 +13,7 @@ public class StringCalculator {
 			String trimmedInput = numbers.trim();
 			if (trimmedInput.equals(EMPTY_STRING)) {
 				result = 0;
-			} else if (trimmedInput.matches("\\d+")) {
+			} else if (trimmedInput.matches(NUMBER_STRING)) {
 				result = Integer.valueOf(trimmedInput);
 			}
 		}
