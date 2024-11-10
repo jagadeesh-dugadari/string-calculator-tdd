@@ -9,10 +9,11 @@ public class StringCalculator {
 		int result = -1;
 		
 		if (numbers != null) {
-			if (numbers.trim().equals(EMPTY_STRING)) {
+			String trimmedInput = numbers.trim();
+			if (trimmedInput.equals(EMPTY_STRING)) {
 				result = 0;
 			} else {
-				result = Integer.valueOf(numbers.trim());
+				result = Integer.valueOf(trimmedInput);
 			}
 		}
 		
